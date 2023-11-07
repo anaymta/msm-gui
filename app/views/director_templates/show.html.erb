@@ -2,11 +2,44 @@
   Director #<%= @the_director.id %> details
 </h1>
 
-<a href="/directors">
-  Go back
-</a>
+<div>
+  <a href="/directors">
+    Go back
+  </a>
+
+</div>
+
+<div>
+  <a href="/delete_director/<%= @the_director.id %>">Delete director</a>
+</div>
 
 <hr>
+
+<form action="/modify_director_record/<%= @the_director.id %>" method="post">
+  <div>
+    <label for="id_field">ID</label>
+    <input id="id_field" type="text" name="the_id" value="<%= @the_director.id %>">
+  </div>
+
+ <div>
+    <label for="image_field">Image</label>
+    <input id="image_field" type="text" name="the_image" value="<%= @the_director.image %>">
+  </div>
+
+  <div>
+    <label for="name_field">Name</label>
+    <input id="name_field" type="text" name="the_name" value="<%= @the_director.name %>">
+  </div>
+
+  <div>
+    <label for="dob_field">DOB</label>
+    <input id="dob_field" type="text" name="the_dob" value="<%= @the_director.dob %>">
+  </div>
+
+  <button>
+    Update director
+  </button>
+
 
 <dl>
   <dt>
@@ -111,7 +144,7 @@
     </td>
 
     <td>
-      <a href="/movies/<%= a_movie.id %>">
+      <a href="/directors/<%= a_director.id %>">
         Show details
       </a>
     </td>
